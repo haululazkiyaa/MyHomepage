@@ -2,6 +2,7 @@
 import Sidebar from '../components/Sidebar.astro';
 
 const { title, menu } = Astro.props;
+const defaultLinearGradient = "linear-gradient(90deg, rgba(184,106,223,1) 0%, rgba(255,108,99,1) 50%, rgba(255,177,71,1) 100%)";
 ---
 
 <!DOCTYPE html>
@@ -14,12 +15,14 @@ const { title, menu } = Astro.props;
 <body>
 	<main class="flex h-screen">
 		<Sidebar active={menu}/>
-		<slot/>
+		<article class="overflow-auto">
+			<slot/>
+		</article>
 	</main>
 </body>
 </html>
 
-<style is:global>
+<style is:global define:vars={{ defaultLinearGradient }}>
 	@font-face {
 		font-family: 'IBM Plex Sans';
 		src: url('/fonts/IBMPlexSans-Regular.ttf') format('woff');
@@ -66,5 +69,15 @@ const { title, menu } = Astro.props;
 	* {
 		font-family: 'IBM Plex Sans', sans-serif;
 		font-size: 16px;
+		scroll-behavior: smooth;
+	}
+
+	.text-gradient {
+		background: var(--defaultLinearGradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+	.bg-gradient {
+		background: var(--defaultLinearGradient);
 	}
 </style>

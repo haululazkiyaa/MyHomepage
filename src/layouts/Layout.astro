@@ -1,0 +1,70 @@
+---
+import Sidebar from '../components/Sidebar.astro';
+
+const { title, menu } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{ title && "Default" }</title>
+</head>
+<body>
+	<main class="flex h-screen">
+		<Sidebar active={menu}/>
+		<slot/>
+	</main>
+</body>
+</html>
+
+<style is:global>
+	@font-face {
+		font-family: 'IBM Plex Sans';
+		src: url('/fonts/IBMPlexSans-Regular.ttf') format('woff');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'IBM Plex Sans';
+		src: url('/fonts/IBMPlexSans-Italic.ttf') format('woff');
+		font-weight: 400;
+		font-style: italic;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'IBM Plex Sans';
+		src: url('/fonts/IBMPlexSans-Medium.ttf') format('woff');
+		font-weight: 500;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'IBM Plex Sans';
+		src: url('/fonts/IBMPlexSans-MediumItalic.ttf') format('woff');
+		font-weight: 500;
+		font-style: italic;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'IBM Plex Sans';
+		src: url('/fonts/IBMPlexSans-Bold.ttf') format('woff');
+		font-weight: 700;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'IBM Plex Sans';
+		src: url('/fonts/IBMPlexSans-BoldItalic.ttf') format('woff');
+		font-weight: 700;
+		font-style: italic;
+		font-display: swap;
+	}
+
+	* {
+		font-family: 'IBM Plex Sans', sans-serif;
+		font-size: 16px;
+	}
+</style>

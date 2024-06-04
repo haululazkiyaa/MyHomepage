@@ -1,113 +1,50 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import profileImage from '../assets/images/img-profile.png'
 ---
 
 <Layout title="Welcome to Astro." menu="about">
 	<section>
 		<div class="px-20 py-10">
-			<p class="italic">Hello, nice to meet you!</p>
-			<h2 class="font-bold uppercase text-[32px]">Welcome to My Homepage</h2>
-			<div class="flex items-center justify-center space-x-5">
-				<div class="basis-1/2 flex flex-col items-center justify-center">
-					<img src={profileImage.src} alt="Muhammad Haulul Azkiyaa" class="w-[250px] mb-5">
-					<p class="font-bold uppercase text-[32px] text-gradient mb-2 text-center leading-[32px]">Muhammad Haulul Azkiyaa</p>
-					<p class="text-[20px] mb-5"><span class="text-[20px] font-bold italic">Software Engineer</span> based in <span class="text-[20px] font-bold italic">Indonesia</span> 🇮🇩</p>
-					<a href="#" class="flex items-center space-x-2 py-3 px-10 underline hover:border-2 hover:border-[#141313]">
-						<span>Download CV</span>
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-							<rect width="24" height="24" fill="#141313"/>
-							<path d="M8.99995 4.8V6.72H15.3264L4.19995 17.8464L5.55355 19.2L16.68 8.0736V14.4H18.6V4.8H8.99995Z" fill="white"/>
-						</svg>
-					</a>
-				</div>
-				<div class="basis-1/2">
-					<p class="mb-2">Hello there! My name is <span class="font-bold text-gradient">Muhammad Haulul Azkiyaa</span>. I am a software engineer and I'm very passionate and dedicated to my work. Currently I work as a Frontend Developer at the number 1 private campus in Indonesia 🇮🇩. <a href="#section__experience" class="underline italic">View my experience</a></p>
-					<p class="mb-2">Apart from being a software engineer, I am also a student, and am always learning new things, including trying out various roles. At campus I learned how to become a developer, be it a web developer, mobile developer, multi-platform developer, etc. Then I also studied Artificial Intelligence, AR/VR, and the like. Apart from that, during college I also experienced various other roles such as UI/UX Designer, Technical Writer, and Project Manager. <a href="#section__education" class="underline italic">View my education</a></p>
-					<p class="mb-10">To test and improve my skills, I took part in various competitions at both national and international levels. <a href="#section__achievement" class="underline italic">View my achievement</a></p></p>
-					<div class="bg-[#141313] flex justify-center items-center space-x-5 px-10 py-3">
-						<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
-							<g opacity="0.2">
-								<path d="M12.2215 46.1893C9.47487 43.272 8.00021 40 8.00021 34.696C8.00021 25.3627 14.5522 16.9973 24.0802 12.8613L26.4615 16.536C17.5682 21.3467 15.8295 27.5893 15.1362 31.5253C16.5682 30.784 18.4429 30.5253 20.2802 30.696C25.0909 31.1413 28.8829 35.0907 28.8829 40C28.8829 42.4754 27.8995 44.8493 26.1492 46.5997C24.3989 48.35 22.0249 49.3333 19.5495 49.3333C16.6882 49.3333 13.9522 48.0267 12.2215 46.1893ZM38.8882 46.1893C36.1415 43.272 34.6669 40 34.6669 34.696C34.6669 25.3627 41.2189 16.9973 50.7469 12.8613L53.1282 16.536C44.2349 21.3467 42.4962 27.5893 41.8029 31.5253C43.2349 30.784 45.1095 30.5253 46.9469 30.696C51.7575 31.1413 55.5469 35.0907 55.5469 40C55.5469 42.4754 54.5635 44.8493 52.8132 46.5997C51.0629 48.35 48.6889 49.3333 46.2135 49.3333C43.3522 49.3333 40.6162 48.0267 38.8855 46.1893L38.8882 46.1893Z" fill="white"/>
-							</g>
-						</svg>
-						<p class="text-white"><span class="bold italic">"Once in your life, try something, work hard at something. Try to change. Nothing bad can happen."</span> ~Jack Ma</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="bg-gradient mr-20">
-			<div class="px-20 py-10">
-				<p class="italic text-white mb-5">See my work experience, education, and achievement.</p>
-				<div id="section__experience" class="flex mb-5">
-					<h2 class="basis-1/3 font-bold uppercase text-[32px] text-white">Experience</h2>
-					<div class="basis-2/3 text-white">
-						<div class="flex flex-col space-y-2 pb-5 border-b-[1px] border-b-white mb-5">
-							<div class="flex italic">
-								<p class="basis-2/3">Pusat Teknologi Informasi Telkom University</p>
-								<p class="basis-1/3 text-right">2022 - Now</p>
-							</div>
-							<h3 class="font-bold uppercase text-[20px]">Frontend Developer</h3>
-							<ul>
-								<li>- Developing an online letter-making application for administrative employees at Telkom University.</li>
-								<li>- Developing a one-data dashboard application for the University of North Sumatra.</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div id="section__education" class="flex mb-5">
-					<h2 class="basis-1/3 font-bold uppercase text-[32px] text-white">Education</h2>
-					<div class="basis-2/3 text-white">
-						<div class="flex flex-col space-y-2 pb-5 border-b-[1px] border-b-white mb-5">
-							<div class="flex italic">
-								<p class="basis-2/3">Bachelor of Software Engineering</p>
-								<p class="basis-1/3 text-right">2022 - Now</p>
-							</div>
-							<h3 class="font-bold uppercase text-[20px]">Telkom University</h3>
-							<ul>
-								<li>- Design Thinking Teaching Assistant</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div id="section__achievement" class="flex mb-5">
-					<h2 class="basis-1/3 font-bold uppercase text-[32px] text-white">Achievement</h2>
-					<div class="basis-2/3 text-white">
-						<div class="flex flex-col space-y-2 pb-5 border-b-[1px] border-b-white mb-5">
-							<div class="flex italic">
-								<p class="basis-2/3">Jagoan Hosting Indonesia</p>
-								<p class="basis-1/3 text-right">2022</p>
-							</div>
-							<h3 class="font-bold uppercase text-[20px]">3rd Winner of MSME Website Design Competition</h3>
-							<p></p>
-						</div>
-						<div class="flex flex-col space-y-2 pb-5 border-b-[1px] border-b-white mb-5">
-							<div class="flex italic">
-								<p class="basis-2/3">Telkom University</p>
-								<p class="basis-1/3 text-right">2022</p>
-							</div>
-							<h3 class="font-bold uppercase text-[20px]">2nd Winner of Software Engineer Competition Scholarship (SECS) 2022</h3>
-							<p></p>
-						</div>
-						<div class="flex flex-col space-y-2 pb-5 border-b-[1px] border-b-white mb-5">
-							<div class="flex italic">
-								<p class="basis-2/3">IEEE</p>
-								<p class="basis-1/3 text-right">2023</p>
-							</div>
-							<h3 class="font-bold uppercase text-[20px]">Finalist of YESIST12 Innovation Challenge Preliminary Round 2023</h3>
-							<p></p>
-						</div>
-						<div class="flex flex-col space-y-2 pb-5 border-b-[1px] border-b-white mb-5">
-							<div class="flex italic">
-								<p class="basis-2/3">DFinity Foundation</p>
-								<p class="basis-1/3 text-right">2024</p>
-							</div>
-							<h3 class="font-bold uppercase text-[20px]">2nd Winner of Codefest 2023 Hackathon</h3>
-							<p></p>
-						</div>
-					</div>
-				</div>
-			</div>
+			<h1>Privacy Policy for Taksonify</h1>
+
+<p>At Taksonify, accessible from taksonify.haululazkiyaa.id, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Taksonify and how we use it.</p>
+
+<p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
+
+<h2>Log Files</h2>
+
+<p>Taksonify follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information. Our Privacy Policy was created with the help of the <a href="https://www.privacypolicyonline.com/privacy-policy-generator/">Privacy Policy Generator</a>.</p>
+
+
+
+
+<h2>Privacy Policies</h2>
+
+<P>You may consult this list to find the Privacy Policy for each of the advertising partners of Taksonify.</p>
+
+<p>Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Taksonify, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</p>
+
+<p>Note that Taksonify has no access to or control over these cookies that are used by third-party advertisers.</p>
+
+<h2>Third Party Privacy Policies</h2>
+
+<p>Taksonify's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. </p>
+
+<p>You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites. What Are Cookies?</p>
+
+<h2>Children's Information</h2>
+
+<p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
+
+<p>Taksonify does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
+
+<h2>Online Privacy Policy Only</h2>
+
+<p>This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Taksonify. This policy is not applicable to any information collected offline or via channels other than this website.</p>
+
+<h2>Consent</h2>
+
+<p>By using our website, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.</p>
 		</div>
 	</section>
 </Layout>

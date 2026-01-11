@@ -1,0 +1,269 @@
+[
+  {
+    "title": "Nutrizee",
+    "period": "Apr 2025 – Present",
+    "description": "Nutrizee is a family-focused mobile app providing nutrition education and tools for families, including pre-pregnancy programs, pregnancy health, and toddler nutrition. It includes a computer vision-based food scanner, food tracking, and parenting dashboards. I led the project as Team Leader and Mobile Developer, overseeing feature design and Flutter app development. I also work as DevOps, preparing Infrastructure Server and Deployment with Azure Ecosystem (Open AI and Foundry).",
+    "achievement": "2nd Place (elevAIte Hackathon 2025)",
+    "supervisor": "Lingga Aji",
+    "skills": ["Flutter", "Microsoft Azure", "Computer Vision", "AI", "DevOps"],
+    "media": [
+      "https://media.licdn.com/dms/image/v2/D562DAQGq3k0zyAK2gw/profile-treasury-image-shrink_480_480/B56Ze.1BfJHQAM-/0/1751253261890?e=1768719600&v=beta&t=twmsyoE-CO1ZCtals4ldtDlf5HecqyzDMLTdfsnu3QY"
+    ],
+    "videoUrl": "https://www.youtube.com/watch?v=46ZephYmZtg"
+  },
+  {
+    "title": "Taksonify - Belajar Taksonomi Jadi Seru",
+    "period": "Apr 2024 – Present",
+    "description": "Taksonify is an educational mobile app that uses gamification and computer vision to help students learn biological taxonomy. It supports both facilitated and self-paced learning, allowing users to scan flora/fauna to identify scientific names interactively. I served as the team lead and also Mobile Developer and Game Designer, implementing real-time object recognition and gamified learning features.",
+    "achievement": "3rd Place (LIDM 2024, IPDP Division)",
+    "supervisor": "Dr. Eng. Alfian Akbar Gozali",
+    "skills": [
+      "Flutter",
+      "Firebase",
+      "Computer Vision",
+      "Gamification",
+      "Game Design"
+    ],
+    "media": [
+      "https://media.licdn.com/dms/image/sync/v2/D5627AQFTU1hGXLX39Q/articleshare-shrink_480/B56Ze.3_DzG0Ao-/0/1751254037128?e=1768719600&v=beta&t=F_VXPXsJkBc0CKJsHVjs85MsmcH2Gn8Z27u3rIudmxk"
+    ],
+    "videoUrl": "https://www.youtube.com/watch?v=t6StbYGuQcA"
+  },
+  {
+    "title": "SIMPKL (Sistem Informasi dan Manajemen PKL)",
+    "period": "Oct 2023 – Present",
+    "description": "SIMPKL is a web-based platform designed to streamline the internship process for vocational school students. It connects schools, companies, students, and parents to manage internship applications, progress monitoring, and evaluations in one integrated system. On this project I served as the Full-Stack Developer (Frontend, Backend, DevOps, QA) and sometimes lead this project. I'm responsible for build system architecture, API development, front-end interfaces, and deployment.",
+    "achievement": "3rd Place (Business Idea Competition 2024)",
+    "supervisor": "Dr. Arfive Gandhi",
+    "skills": [
+      "Requirements Analysis",
+      "Full-Stack Development",
+      "API Development",
+      "DevOps",
+      "QA"
+    ],
+    "media": [
+      "https://www.linkedin.com/redir/redirect/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DNmTN8DNSERw&urlhash=zumg&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3B2yma7BHkSQWNHgnXrrR8FQ%3D%3D"
+    ],
+    "videoUrl": "https://www.youtube.com/watch?v=NmTN8DNSERw"
+  },
+  {
+    "title": "MoveQuest",
+    "period": "Apr 2025 – May 2025",
+    "description": "MoveQuest is a gamified app designed to reduce digital addiction among children by motivating them to complete physical challenges and earn in-game rewards. As the Lead UI/UX Designer, I designed engaging visuals and developed user flow that encourages active behavior.",
+    "achievement": "2nd Place (UX Design Competition Sitefest 4.0)",
+    "supervisor": "",
+    "skills": [
+      "Design Research",
+      "Figma",
+      "UI/UX Design",
+      "Gamification",
+      "User Flow"
+    ],
+    "media": [
+      "https://www.linkedin.com/redir/redirect/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DcdPJ3CZSMx4&urlhash=qSeK&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3B2yma7BHkSQWNHgnXrrR8FQ%3D%3D"
+    ],
+    "videoUrl": "https://www.youtube.com/watch?v=cdPJ3CZSMx4"
+  },
+  {
+    "title": "Neumedic",
+    "period": "Nov 2024 – Dec 2024",
+    "description": "Neumedic is a mobile app designed to support the mental health of healthcare workers through features such as AI chatbots, relaxation checklists, and emotional tracking. The app was built as a response to Google's AI for Impact challenge focused on improving mental well-being among frontliners. As the Team Leader, I led the ideation process, oversaw the UX/UI design, and ensured the prototype addressed the key stress factors identified during user research.",
+    "achievement": "Top 95 (Google Cloud AI for Impact 2024)",
+    "supervisor": "",
+    "skills": [
+      "Google Cloud Platform",
+      "Google Gemini",
+      "AI Chatbot",
+      "Mental Health",
+      "UX/UI Design"
+    ],
+    "media": [
+      "https://media.licdn.com/dms/image/v2/D562DAQFeAqmF8pCWiA/profile-treasury-image-shrink_480_480/B56Ze.zLwXHUAQ-/0/1751252797466?e=1768719600&v=beta&t=1PoElBF2WzJTDrNSwVJVJ-ajUVkGlZHlqQByvqtnA3A"
+    ],
+    "videoUrl": "https://www.youtube.com/watch?v=qtFh21ZoU24"
+  },
+  {
+    "title": "Counter Carbon",
+    "period": "Feb 2024 – Oct 2024",
+    "description": "Counter Carbon is a concept app for carbon tracking and reduction. The design focuses on clarity, user empowerment, and educational feedback using effective visualizations. I led as UI/UX Designer, conducting user needs analysis and building interactive mockups. Created for a UX Design class project.",
+    "achievement": "",
+    "supervisor": "",
+    "skills": [
+      "User Experience",
+      "Participant Observation",
+      "UI/UX Design",
+      "Data Visualization"
+    ],
+    "media": [
+      "https://media.licdn.com/dms/image/sync/v2/D5627AQHr1Bw5BtWaTg/articleshare-shrink_480/B56Ze.u7paGoAo-/0/1751251663771?e=1768719600&v=beta&t=-PLfyI3V8KbhLcsTbbnGUwAY-ePE1RrnHTll-W1U58A"
+    ],
+    "videoUrl": "https://www.youtube.com/watch?v=J9l6opqUvvw"
+  },
+  {
+    "title": "BeSafety - Brainwave Based Public Transportation Safety System",
+    "period": "Mar 2024 – Sep 2024",
+    "description": "BeSafety is an innovative safety monitoring system for public transport drivers using EEG (Electroencephalogram) technology to detect drowsiness or low attention levels. The system includes wearable sensors for drivers and a web-based dashboard to track cognitive conditions in real-time. I served as the Full-Stack Developer and Team Leader, managing hardware-software integration, real-time data processing, and system dashboard development.",
+    "achievement": "Runner-Up IEEE YESIST12 IC 2024 Tunisia | 1st Place IEEE YESIST12 IC Prelims",
+    "supervisor": "Dr. Eng. Alfian Akbar Gozali",
+    "skills": [
+      "Full-Stack Development",
+      "IoT",
+      "EEG Technology",
+      "Real-time Processing",
+      "Hardware Integration"
+    ],
+    "media": [
+      "https://media.licdn.com/dms/image/v2/D5610AQHbptUULNn42w/image-shrink_480/image-shrink_480/0/1733360417219?e=1768719600&v=beta&t=oO6rNC-x_dQprwf7_0hI00nyDLQW8aG1mENUoxkrYfc",
+      "https://media.licdn.com/dms/image/sync/v2/D5627AQEFuVR3kH5M_g/articleshare-shrink_480/articleshare-shrink_480/0/1727319623478?e=1768719600&v=beta&t=H6viYlSZI1HIIb2sU92js3PPwU2DfAV2TcA2bmyw00M"
+    ],
+    "videoUrl": "https://telkomuniversity.ac.id/tel-u-ciptakan-inovasi-besafety-untuk-mengurangi-kecelakaan-lalu-lintas/"
+  },
+  {
+    "title": "e-Wise",
+    "period": "Mar 2024 – Sep 2024",
+    "description": "e-Wise is a digital waste management app that encourages e-waste recycling through a gamified experience and community-based incentives. I acted as the Project Lead and UI Designer, designing reward systems, user flow, and leading app ideation.",
+    "achievement": "Finalist (IEEE YESIST12 MF Track 2024)",
+    "supervisor": "",
+    "skills": [
+      "Mobile Applications",
+      "Flutter",
+      "Gamification",
+      "UI Design",
+      "Environmental Tech"
+    ],
+    "media": [
+      "https://media.licdn.com/dms/image/sync/v2/D5627AQE99BfFRbFQrw/articleshare-shrink_480/B56Ze.8XdxG0As-/0/1751255185683?e=1768719600&v=beta&t=_HBMm9Ib9uA63kADw7-ZYml1-brTrBE7hhL7EDx02mI"
+    ],
+    "videoUrl": "https://www.youtube.com/watch?v=6Pdb6_B4ELo"
+  },
+  {
+    "title": "Arunica Academy",
+    "period": "Feb 2024 – Aug 2024",
+    "description": "Arundemy is a school-targeted Learning Management System equipped with gamified modules and an AI chatbot. Developed for the PKM-KC program to enhance digital learning experiences. I served as a Frontend Developer using React, collaborating on system flow and UI implementation.",
+    "achievement": "Funding Recipient (PKM-KC 2024)",
+    "supervisor": "Dr. Edy Wibowo",
+    "skills": ["Front-End Development", "React.js", "LMS", "AI Integration"],
+    "media": [
+      "https://media.licdn.com/dms/image/v2/D562DAQEw6yUCF5e90Q/profile-treasury-image-shrink_480_480/B56Ze.tw6nHEAM-/0/1751251358256?e=1768719600&v=beta&t=JshE9H2sUMvVZL7CB4c2dRkqGY4uXyIhUk92dFSbVWs"
+    ],
+    "videoUrl": "https://www.youtube.com/watch?v=6_mhUBwh-f0"
+  },
+  {
+    "title": "TerraX",
+    "period": "Dec 2023 – Aug 2024",
+    "description": "TerraX is a Web3-based property platform built using ICP (Internet Computer Protocol), providing secure, transparent, and efficient land transactions. I served as the Web3 Developer, implementing blockchain integration and smart contract functionalities.",
+    "achievement": "3rd Place (Codefest 2024 Hackathon)",
+    "supervisor": "",
+    "skills": [
+      "Web3",
+      "Blockchain",
+      "Smart Contracts",
+      "ICP",
+      "Pitching Ideas"
+    ],
+    "media": [
+      "https://media.licdn.com/dms/image/v2/D562DAQH6WReJAqN1MQ/profile-treasury-document-cover-images_480/B56Ze.8EGHGQAw-/0/1751255109940?e=1768719600&v=beta&t=lFRXs6v1oGAjj0N0a7nnJ5Ms5_4kGimJhrzd2m4oRUs"
+    ],
+    "videoUrl": ""
+  },
+  {
+    "title": "RiseFarmer",
+    "period": "Mar 2024",
+    "description": "RiseFarmer is a mobile app that empowers local farmers to sell rice and crops directly to consumers, minimizing distribution layers and increasing profits. I contributed as the Mobile Developer during my internship at Mobile Innovation Lab, developing key features and mobile interfaces using Flutter.",
+    "achievement": "3rd Place (MotionHack 2024)",
+    "supervisor": "",
+    "skills": [
+      "Market Research",
+      "Competitive Analysis",
+      "Flutter",
+      "Mobile Development"
+    ],
+    "media": [
+      "https://media.licdn.com/dms/image/v2/D562DAQEsKUYC1U90Wg/profile-treasury-document-cover-images_480/B56Ze.1xnkHoA0-/0/1751253465271?e=1768719600&v=beta&t=quCCqMrjb9O21ut5BaT_wpQiAJ2VeWOSUD4JF1kM0No"
+    ],
+    "videoUrl": ""
+  },
+  {
+    "title": "GiveFoods",
+    "period": "Sep 2023 – Jan 2024",
+    "description": "GiveFoods is a UI design concept for a food donation app. Developed during an HCI class project, it emphasizes accessibility and user empathy. I worked as UI Designer and Group Coordinator, ensuring a user-friendly experience based on HCI principles.",
+    "achievement": "",
+    "supervisor": "Dr. Arfive Gandhi",
+    "skills": ["Critical Thinking", "Business Process", "UI Design"],
+    "media": [
+      "https://media.licdn.com/dms/image/v2/D562DAQHRijYVOQ5HQw/profile-treasury-document-cover-images_480/B56Ze.x8JdHQAw-/0/1751252485352?e=1768719600&v=beta&t=NHRYdyFD3ZOcKeOfuWyB9HbzZcd0awAJrWi1B_cPgSU"
+    ],
+    "videoUrl": ""
+  },
+  {
+    "title": "Teman Wisata (f. SmartTourism)",
+    "period": "May 2023 – Jan 2024",
+    "description": "SmartTourism is a travel planning app designed to help users create personalized itineraries and receive AI-driven destination recommendations. The app offers features such as trip suggestions, optimized scheduling, and budget management, tailored to user preferences. Developed as part of a university course project, I served as the Lead UI/UX Designer, responsible for designing the full user interface and mapping out the app flow from onboarding to destination recommendations.",
+    "achievement": "",
+    "supervisor": "",
+    "skills": [
+      "Business Process",
+      "Market Analysis",
+      "UI/UX Design",
+      "AI Integration"
+    ],
+    "media": [
+      "https://media.licdn.com/dms/image/v2/D562DAQHacXQtWNb-Lw/profile-treasury-image-shrink_480_480/B56Ze.3lmfG0AM-/0/1751253954054?e=1768719600&v=beta&t=H43Dw27n769jTSTd0bJ1Hz9Zr5AolEM5aA61GrNQdiE"
+    ],
+    "videoUrl": ""
+  },
+  {
+    "title": "Serenity AI - Smart Mental Health Mobile Chatbot",
+    "period": "Mar 2023 – Aug 2023",
+    "description": "Serenity AI is a mental health companion mobile app designed to support teenagers in emotional self-care. The app features a Generative AI chatbot for empathetic conversation, emotion journaling, and mindfulness activity suggestions. As a team lead, I contributed as the Mobile Developer, Backend Developer, and UI Designer, building the React Native front-end, integrating Firebase, and connecting AI responses.",
+    "achievement": "Finalist (IEEE YESIST12 IC Track 2023)",
+    "supervisor": "Dr. Eng. Alfian Akbar Gozali",
+    "skills": ["React Native", "Firebase", "AI Chatbot", "Mental Health"],
+    "media": [
+      "https://media.licdn.com/dms/image/sync/v2/D5627AQGr4EJgyy3Awg/articleshare-shrink_480/B56Ze.quGFHUAo-/0/1751250559701?e=1768719600&v=beta&t=X-jqWmhpOjVuZO9RKw0YGOjD9vpg8O0vcctCSSRzWqw"
+    ],
+    "videoUrl": "https://www.youtube.com/watch?v=pq7nzISryXk"
+  },
+  {
+    "title": "Academee",
+    "period": "Sep 2022 – Jan 2023",
+    "description": "Academee was a design-based education project tackling SDG 4 (Quality Education). Using Design Thinking methods, we conducted user research, ideation, and prototyping to create an interactive app for students in underserved areas. I served as the Team Leader, coordinating user research, wireframes, and team roles throughout the project.",
+    "achievement": "",
+    "supervisor": "Dr. Ati Suci Dian Martha",
+    "skills": [
+      "Design Thinking",
+      "Design Research",
+      "User Research",
+      "Prototyping"
+    ],
+    "media": [
+      "https://media.licdn.com/dms/image/v2/D562DAQET0Hx9vQkrTA/profile-treasury-document-cover-images_480/B56Ze.r1a_HoAw-/0/1751250857008?e=1768719600&v=beta&t=fxw_iTLqNOQ9mc3zR8BvmY1nf_3nxQgrzoZs42h4hzo"
+    ],
+    "videoUrl": ""
+  },
+  {
+    "title": "Portal Akademik Mahasiswa (Pama)",
+    "period": "Aug 2022 – Sep 2022",
+    "description": "PAMA is a web-based academic portal inspired by typical university systems, enabling students to view class schedules, exam timetables, and grades. I worked as the Frontend Developer, implementing the user interface using HTML, CSS, and JavaScript. This project contributed to my acceptance with a full scholarship at Telkom University.",
+    "achievement": "2nd Place (SE Competition Scholarship 2022)",
+    "supervisor": "",
+    "skills": ["JavaScript", "NestJS", "HTML", "CSS", "Frontend Development"],
+    "media": [
+      "https://www.linkedin.com/redir/redirect/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DjUffk98lX9I&urlhash=SrqJ&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3BrqwT%2B3zpRry5DLwJdETddw%3D%3D"
+    ],
+    "videoUrl": "https://www.youtube.com/watch?v=jUffk98lX9I"
+  },
+  {
+    "title": "Template Divi Premium Toko Online UMKM",
+    "period": "Aug 2022 – Sep 2022",
+    "description": "This template provides an easy-to-use web storefront for MSMEs (Micro, Small, Medium Enterprises) using Divi and Elementor, without requiring any coding knowledge. I worked as the WordPress developer, building responsive, visually appealing templates tailored to non-technical users.",
+    "achievement": "3rd Place (UMKM Web Design Competition 2022)",
+    "supervisor": "",
+    "skills": ["WordPress", "Elementor", "Divi", "Web Design"],
+    "media": [
+      "https://www.linkedin.com/redir/redirect/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D6zZlXcpZB_A&urlhash=pKGS&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3BrqwT%2B3zpRry5DLwJdETddw%3D%3D"
+    ],
+    "videoUrl": "https://www.youtube.com/watch?v=6zZlXcpZB_A"
+  }
+]

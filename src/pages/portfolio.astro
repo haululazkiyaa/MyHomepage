@@ -1,0 +1,274 @@
+---
+import Layout from '../layouts/Layout.astro';
+import portfoliosData from '../data/portfolios.json';
+---
+
+<Layout title="Portfolio | Muhammad Haulul Azkiyaa" menu="portfolio">
+	<section>
+		<div class="px-4 md:px-10 lg:px-20 py-6 md:py-10">
+			<p class="italic text-sm md:text-base">Explore my work</p>
+			<h2 class="font-bold uppercase text-xl md:text-2xl lg:text-[32px] mb-6">My Portfolio</h2>
+			
+			<!-- Portfolio Grid -->
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				{portfoliosData.map((portfolio) => (
+					<div class="border-2 border-[#141313] p-5 hover:shadow-lg transition-shadow duration-300 flex flex-col">
+						
+						<!-- Achievement Badge -->
+						{portfolio.achievement && (
+							<div class="mb-3">
+								<div class="bg-gradient px-3 py-2 rounded">
+									<p class="text-white text-xs md:text-sm font-bold">
+										🏆 {portfolio.achievement}
+									</p>
+								</div>
+							</div>
+						)}
+
+                        <!-- Project Header -->
+						<div class="mb-3">
+							<h3 class="font-bold uppercase text-base md:text-lg lg:text-xl mb-2 leading-tight">
+								{portfolio.title}
+							</h3>
+							<p class="text-sm italic text-gray-600">{portfolio.period}</p>
+						</div>
+
+						<!-- Description -->
+						<p class="text-sm md:text-base mb-3 flex-grow line-clamp-4">
+							{portfolio.description.slice(0, 50)}{portfolio.description.length > 50 ? '...' : ''}
+						</p>
+
+						<!-- Supervisor -->
+						{portfolio.supervisor && (
+							<p class="text-sm mb-3">
+								<span class="font-bold">Supervisor:</span> {portfolio.supervisor}
+							</p>
+						)}
+
+						<!-- Skills Tags -->
+						{/* <div class="flex flex-wrap gap-2 mb-4">
+							{portfolio.skills.slice(0, 3).map((skill) => (
+								<span class="bg-[#f3f3f3] px-3 py-1 text-xs rounded-full">
+									{skill}
+								</span>
+							))}
+							{portfolio.skills.length > 5 && (
+								<span class="bg-[#f3f3f3] px-3 py-1 text-xs rounded-full font-bold">
+									+{portfolio.skills.length - 5}
+								</span>
+							)}
+						</div> */}
+
+						<!-- Media Preview -->
+						{portfolio.media && portfolio.media.length > 0 && (
+							<div class="flex gap-2 flex-wrap mb-4">
+								{portfolio.media.slice(0, 3).map((mediaUrl, index) => (
+									<button 
+										class="portfolio-preview-btn border-2 border-gray-300 rounded overflow-hidden hover:border-[#141313] transition-colors"
+										data-media={mediaUrl}
+									>
+										<img 
+											src={mediaUrl} 
+											alt={`${portfolio.title} - Media ${index + 1}`}
+											class="w-16 h-16 object-cover"
+										/>
+									</button>
+								))}
+								{portfolio.media.length > 3 && (
+									<div class="w-16 h-16 border-2 border-gray-300 rounded flex items-center justify-center bg-gray-100">
+										<span class="text-xs font-bold">+{portfolio.media.length - 3}</span>
+									</div>
+								)}
+							</div>
+						)}
+
+						<!-- Action Buttons -->
+						<div class="flex gap-2 mt-auto">
+							{portfolio.videoUrl && (
+								<a 
+									href={portfolio.videoUrl} 
+									target="_blank"
+									class="flex-1 bg-[#141313] text-white py-2 px-4 text-center text-sm hover:bg-gray-800 transition-colors"
+								>
+									Watch Video
+								</a>
+							)}
+							<button 
+								class="view-details-btn flex-1 border-2 border-[#141313] text-[#141313] py-2 px-4 text-sm hover:bg-[#141313] hover:text-white transition-colors"
+								data-portfolio-title={portfolio.title}
+								data-portfolio-period={portfolio.period}
+								data-portfolio-description={portfolio.description}
+								data-portfolio-achievement={portfolio.achievement}
+								data-portfolio-supervisor={portfolio.supervisor}
+								data-portfolio-skills={JSON.stringify(portfolio.skills)}
+							>
+								View Details
+							</button>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Image Preview Modal -->
+	<div id="image-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
+		<button id="close-image-modal" class="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors">
+			<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+				<line x1="18" y1="6" x2="6" y2="18"></line>
+				<line x1="6" y1="6" x2="18" y2="18"></line>
+			</svg>
+		</button>
+		<img id="modal-image" src="" alt="Preview" class="max-w-full max-h-full object-contain">
+	</div>
+
+	<!-- Portfolio Details Modal -->
+	<div id="details-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
+		<div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 relative">
+			<button id="close-details-modal" class="absolute top-4 right-4 text-gray-600 hover:text-black transition-colors">
+				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<line x1="18" y1="6" x2="6" y2="18"></line>
+					<line x1="6" y1="6" x2="18" y2="18"></line>
+				</svg>
+			</button>
+			
+			<h3 id="modal-title" class="font-bold uppercase text-xl md:text-2xl mb-2"></h3>
+			<p id="modal-period" class="text-sm italic text-gray-600 mb-4"></p>
+			
+			<div id="modal-achievement" class="mb-4 hidden">
+				<div class="bg-gradient px-4 py-3 rounded">
+					<p class="text-white text-sm md:text-base font-bold">
+						🏆 <span id="modal-achievement-text"></span>
+					</p>
+				</div>
+			</div>
+			
+			<p id="modal-description" class="text-sm md:text-base mb-4"></p>
+			
+			<div id="modal-supervisor-section" class="mb-4 hidden">
+				<p class="text-sm md:text-base">
+					<span class="font-bold">Supervisor:</span> <span id="modal-supervisor"></span>
+				</p>
+			</div>
+			
+			<div class="mb-4">
+				<p class="font-bold mb-2">Skills:</p>
+				<div id="modal-skills" class="flex flex-wrap gap-2"></div>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<script>
+	// Image modal functionality
+	const imageModal = document.getElementById('image-modal');
+	const modalImage = document.getElementById('modal-image') as HTMLImageElement;
+	const closeImageModalBtn = document.getElementById('close-image-modal');
+	const previewBtns = document.querySelectorAll('.portfolio-preview-btn');
+
+	previewBtns.forEach(btn => {
+		btn.addEventListener('click', () => {
+			const mediaUrl = btn.getAttribute('data-media');
+			if (modalImage && imageModal && mediaUrl) {
+				modalImage.src = mediaUrl;
+				imageModal.classList.remove('hidden');
+				imageModal.classList.add('flex');
+			}
+		});
+	});
+
+	closeImageModalBtn?.addEventListener('click', () => {
+		imageModal?.classList.add('hidden');
+		imageModal?.classList.remove('flex');
+	});
+
+	imageModal?.addEventListener('click', (e) => {
+		if (e.target === imageModal) {
+			imageModal.classList.add('hidden');
+			imageModal.classList.remove('flex');
+		}
+	});
+
+	// Details modal functionality
+	const detailsModal = document.getElementById('details-modal');
+	const closeDetailsModalBtn = document.getElementById('close-details-modal');
+	const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
+
+	viewDetailsBtns.forEach(btn => {
+		btn.addEventListener('click', () => {
+			const title = btn.getAttribute('data-portfolio-title');
+			const period = btn.getAttribute('data-portfolio-period');
+			const description = btn.getAttribute('data-portfolio-description');
+			const achievement = btn.getAttribute('data-portfolio-achievement');
+			const supervisor = btn.getAttribute('data-portfolio-supervisor');
+			const skills = JSON.parse(btn.getAttribute('data-portfolio-skills') || '[]');
+
+			// Set modal content
+			const modalTitle = document.getElementById('modal-title');
+			const modalPeriod = document.getElementById('modal-period');
+			const modalDescription = document.getElementById('modal-description');
+			const modalAchievement = document.getElementById('modal-achievement');
+			const modalAchievementText = document.getElementById('modal-achievement-text');
+			const modalSupervisorSection = document.getElementById('modal-supervisor-section');
+			const modalSupervisor = document.getElementById('modal-supervisor');
+			const modalSkills = document.getElementById('modal-skills');
+
+			if (modalTitle) modalTitle.textContent = title || '';
+			if (modalPeriod) modalPeriod.textContent = period || '';
+			if (modalDescription) modalDescription.textContent = description || '';
+			
+			if (achievement && modalAchievement && modalAchievementText) {
+				modalAchievementText.textContent = achievement;
+				modalAchievement.classList.remove('hidden');
+			} else if (modalAchievement) {
+				modalAchievement.classList.add('hidden');
+			}
+
+			if (supervisor && modalSupervisorSection && modalSupervisor) {
+				modalSupervisor.textContent = supervisor;
+				modalSupervisorSection.classList.remove('hidden');
+			} else if (modalSupervisorSection) {
+				modalSupervisorSection.classList.add('hidden');
+			}
+
+			if (modalSkills) {
+				modalSkills.innerHTML = '';
+				skills.forEach((skill: string) => {
+					const skillTag = document.createElement('span');
+					skillTag.className = 'bg-[#f3f3f3] px-3 py-2 text-sm rounded-full';
+					skillTag.textContent = skill;
+					modalSkills.appendChild(skillTag);
+				});
+			}
+
+			detailsModal?.classList.remove('hidden');
+			detailsModal?.classList.add('flex');
+		});
+	});
+
+	closeDetailsModalBtn?.addEventListener('click', () => {
+		detailsModal?.classList.add('hidden');
+		detailsModal?.classList.remove('flex');
+	});
+
+	detailsModal?.addEventListener('click', (e) => {
+		if (e.target === detailsModal) {
+			detailsModal.classList.add('hidden');
+			detailsModal.classList.remove('flex');
+		}
+	});
+
+	// Close modals with ESC key
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape') {
+			if (imageModal && !imageModal.classList.contains('hidden')) {
+				imageModal.classList.add('hidden');
+				imageModal.classList.remove('flex');
+			}
+			if (detailsModal && !detailsModal.classList.contains('hidden')) {
+				detailsModal.classList.add('hidden');
+				detailsModal.classList.remove('flex');
+			}
+		}
+	});
+</script>

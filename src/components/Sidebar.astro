@@ -2,11 +2,11 @@
 const { active } = Astro.props;
 ---
 
-<aside class="flex-none bg-[#141313] w-[285px] py-[58px] px-[48px] text-white flex flex-col justify-between">
+<aside class="flex-none bg-[#141313] w-[285px] py-[58px] px-[48px] text-white flex flex-col justify-between fixed lg:relative h-full z-40 -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out">
     <section>
-        <h1 class="text-[32px]">MHA</h1>
+        <h1 class="text-2xl md:text-[32px]">MHA</h1>
     </section>
-    <nav class="uppercase text-[20px]">
+    <nav class="uppercase text-base md:text-[20px]">
         <ul class="space-y-5">
             <li><a class={active === "home" ? "nav-active" : "nav-inactive"} href="/">Home</a></li>
             <li><a class={active === "about" ? "nav-active" : "nav-inactive"} href="/about">About</a></li>
@@ -16,7 +16,7 @@ const { active } = Astro.props;
         </ul>
     </nav>
     <section>
-        <div class="flex space-x-2 mb-5">
+        <div class="flex space-x-2 mb-5 flex-wrap">
             <a href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <circle cx="20" cy="20" r="20" fill="white"/>
@@ -38,7 +38,7 @@ const { active } = Astro.props;
                 </svg>
             </a>
         </div>
-        <p class="text-[12px]">
+        <p class="text-[10px] md:text-[12px]">
             Copyright &copy;{new Date().getFullYear()} Muhammad Haulul Azkiyaa. All right reserved.
         </p>
     </section>

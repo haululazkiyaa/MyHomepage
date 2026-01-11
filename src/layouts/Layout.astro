@@ -13,12 +13,66 @@ const defaultLinearGradient = "linear-gradient(90deg, rgba(184,106,223,1) 0%, rg
 	<title>{ title && "Default" }</title>
 </head>
 <body>
+	<!-- Mobile menu toggle button -->
+	<button id="mobile-menu-toggle" class="lg:hidden fixed bottom-4 right-4 z-50 bg-[#141313] text-white p-3 rounded flex items-center transition-all duration-300">
+		<!-- Hamburger icon -->
+		<svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="transition-all duration-300">
+			<line x1="3" y1="12" x2="21" y2="12"></line>
+			<line x1="3" y1="6" x2="21" y2="6"></line>
+			<line x1="3" y1="18" x2="21" y2="18"></line>
+		</svg>
+		<!-- Cross icon (hidden by default) -->
+		<svg id="cross-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden transition-all duration-300">
+			<line x1="18" y1="6" x2="6" y2="18"></line>
+			<line x1="6" y1="6" x2="18" y2="18"></line>
+		</svg>
+		<span id="menu-text" class="ml-2 transition-all duration-300">MENU</span>	
+	</button>
+
+	<!-- Mobile menu overlay -->
+	<div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden lg:hidden"></div>
+
 	<main class="flex h-screen">
 		<Sidebar active={menu}/>
-		<article class="overflow-auto">
+		<article class="overflow-auto w-full">
 			<slot/>
 		</article>
 	</main>
+
+	<script>
+		const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+		const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+		const sidebar = document.querySelector('aside');
+		const hamburgerIcon = document.getElementById('hamburger-icon');
+		const crossIcon = document.getElementById('cross-icon');
+		const menuText = document.getElementById('menu-text');
+
+		mobileMenuToggle?.addEventListener('click', () => {
+			const isOpen = !sidebar?.classList.contains('-translate-x-full');
+			
+			sidebar?.classList.toggle('-translate-x-full');
+			mobileMenuOverlay?.classList.toggle('hidden');
+			
+			// Toggle icons and text
+			if (isOpen) {
+				hamburgerIcon?.classList.remove('hidden');
+				crossIcon?.classList.add('hidden');
+				if (menuText) menuText.textContent = 'MENU';
+			} else {
+				hamburgerIcon?.classList.add('hidden');
+				crossIcon?.classList.remove('hidden');
+				if (menuText) menuText.textContent = 'CLOSE';
+			}
+		});
+
+		mobileMenuOverlay?.addEventListener('click', () => {
+			sidebar?.classList.add('-translate-x-full');
+			mobileMenuOverlay?.classList.add('hidden');
+			hamburgerIcon?.classList.remove('hidden');
+			crossIcon?.classList.add('hidden');
+			if (menuText) menuText.textContent = 'MENU';
+		});
+	</script>
 </body>
 </html>
 

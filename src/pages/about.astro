@@ -9,14 +9,14 @@ import achievementsData from '../data/achievements.json';
 <Layout title="Welcome to Astro." menu="about">
 	<section>
 		<div class="px-4 md:px-10 lg:px-20 py-6 md:py-10">
-			<p class="italic">Hello, nice to meet you!</p>
-			<h2 class="font-bold uppercase text-[32px]">Welcome to My Homepage</h2>
+			<p class="italic animate-slide-up">Hello, nice to meet you!</p>
+			<h2 class="font-bold uppercase text-[32px] animate-slide-up animate-delay-100">Welcome to My Homepage</h2>
 			<div class="lg:flex items-center justify-center lg:space-x-5">
 				<div class="basis-1/2 flex flex-col items-center justify-center mb-5 lg:mb-0">
-					<img src={profileImage.src} alt="Muhammad Haulul Azkiyaa" class="w-[250px] mb-5">
-					<p class="font-bold uppercase text-[32px] text-gradient mb-2 text-center leading-[32px]">Muhammad Haulul Azkiyaa</p>
-					<p class="text-[20px] mb-5"><span class="text-[20px] font-bold italic">Software Engineer</span> based in <span class="text-[20px] font-bold italic">Indonesia</span> 🇮🇩</p>
-					<a href="#" class="flex items-center space-x-2 py-3 px-10 underline border-2 border-[#141313] hover:bg-[#dedede]">
+					<img src={profileImage.src} alt="Muhammad Haulul Azkiyaa" class="h-[200px] mb-5 animate-scale-in animate-delay-200">
+					<p class="font-bold uppercase text-[32px] text-gradient mb-2 text-center leading-[32px] animate-fade-in animate-delay-300">Muhammad Haulul Azkiyaa</p>
+					<p class="text-[20px] mb-5 animate-fade-in animate-delay-400"><span class="text-[16px] lg:text-[20px] font-bold italic">Software Engineer</span> based in <span class="text-[20px] font-bold italic">Indonesia</span> 🇮🇩</p>
+					<a href="#" class="flex items-center space-x-2 py-3 px-10 underline border-2 border-[#141313] hover:bg-[#dedede] animate-slide-up animate-delay-500 hover:scale-105 transition-transform duration-300">
 						<span>Download CV</span>
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 							<rect width="24" height="24" fill="#141313"/>
@@ -25,10 +25,10 @@ import achievementsData from '../data/achievements.json';
 					</a>
 				</div>
 				<div class="w-full lg:basis-1/2">
-					<p class="mb-2 text-sm md:text-base">Hello there! My name is <span class="font-bold text-gradient">Muhammad Haulul Azkiyaa</span>. I am a software engineer and I'm very passionate and dedicated to my work. Currently I work as a Frontend Developer at the number 1 private campus in Indonesia 🇮🇩. <a href="#section__experience" class="underline italic">View my experience</a></p>
-					<p class="mb-2 text-sm md:text-base">Apart from being a software engineer, I am also a student, and am always learning new things, including trying out various roles. At campus I learned how to become a developer, be it a web developer, mobile developer, multi-platform developer, etc. Then I also studied Artificial Intelligence, AR/VR, and the like. Apart from that, during college I also experienced various other roles such as UI/UX Designer, Technical Writer, and Project Manager. <a href="#section__education" class="underline italic">View my education</a></p>
-					<p class="mb-4 md:mb-10 text-sm md:text-base">To test and improve my skills, I took part in various competitions at both national and international levels. <a href="#section__achievement" class="underline italic">View my achievement</a></p>
-					<div class="bg-[#141313] flex flex-col md:flex-row justify-center items-center space-y-3 md:space-y-0 md:space-x-5 px-4 md:px-10 py-3">
+					<p class="mb-2 text-sm md:text-base animate-slide-in-right animate-delay-200">Hello there! My name is <span class="font-bold text-gradient">Muhammad Haulul Azkiyaa</span>. I am a software engineer and I'm very passionate and dedicated to my work. Currently I work as a Frontend Developer at the number 1 private campus in Indonesia 🇮🇩. <a href="#section__experience" class="underline italic">View my experience</a></p>
+					<p class="mb-2 text-sm md:text-base animate-slide-in-right animate-delay-300">Apart from being a software engineer, I am also a student, and am always learning new things, including trying out various roles. At campus I learned how to become a developer, be it a web developer, mobile developer, multi-platform developer, etc. Then I also studied Artificial Intelligence, AR/VR, and the like. Apart from that, during college I also experienced various other roles such as UI/UX Designer, Technical Writer, and Project Manager. <a href="#section__education" class="underline italic">View my education</a></p>
+					<p class="mb-4 md:mb-10 text-sm md:text-base animate-slide-in-right animate-delay-400">To test and improve my skills, I took part in various competitions at both national and international levels. <a href="#section__achievement" class="underline italic">View my achievement</a></p>
+					<div class="bg-[#141313] flex flex-col md:flex-row justify-center items-center space-y-3 md:space-y-0 md:space-x-5 px-4 md:px-10 py-3 animate-scale-in animate-delay-500">
 						<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
 							<g opacity="0.2">
 								<path d="M12.2215 46.1893C9.47487 43.272 8.00021 40 8.00021 34.696C8.00021 25.3627 14.5522 16.9973 24.0802 12.8613L26.4615 16.536C17.5682 21.3467 15.8295 27.5893 15.1362 31.5253C16.5682 30.784 18.4429 30.5253 20.2802 30.696C25.0909 31.1413 28.8829 35.0907 28.8829 40C28.8829 42.4754 27.8995 44.8493 26.1492 46.5997C24.3989 48.35 22.0249 49.3333 19.5495 49.3333C16.6882 49.3333 13.9522 48.0267 12.2215 46.1893ZM38.8882 46.1893C36.1415 43.272 34.6669 40 34.6669 34.696C34.6669 25.3627 41.2189 16.9973 50.7469 12.8613L53.1282 16.536C44.2349 21.3467 42.4962 27.5893 41.8029 31.5253C43.2349 30.784 45.1095 30.5253 46.9469 30.696C51.7575 31.1413 55.5469 35.0907 55.5469 40C55.5469 42.4754 54.5635 44.8493 52.8132 46.5997C51.0629 48.35 48.6889 49.3333 46.2135 49.3333C43.3522 49.3333 40.6162 48.0267 38.8855 46.1893L38.8882 46.1893Z" fill="white"/>
@@ -45,10 +45,10 @@ import achievementsData from '../data/achievements.json';
 				
 				<!-- Experience Section -->
 				<div id="section__experience" class="flex flex-col lg:flex-row mb-5">
-					<h2 class="w-full lg:basis-1/3 font-bold uppercase text-xl md:text-2xl lg:text-[32px] text-white mb-3 lg:mb-0">Experience</h2>
+					<h2 class="w-full lg:basis-1/3 font-bold uppercase text-xl md:text-2xl lg:text-[32px] text-white mb-3 lg:mb-0 animate-slide-in-left">Experience</h2>
 					<div class="w-full lg:basis-2/3 text-white">
-						{experiencesData.map((experience) => (
-							<div class="flex flex-col space-y-2 pb-5 border-b-[1px] border-b-white mb-5">
+						{experiencesData.map((experience, index) => (
+							<div class={`flex flex-col space-y-2 pb-5 border-b-[1px] border-b-white mb-5 animate-slide-up animate-delay-${Math.min(index * 100, 500)}`}>
 								<div class="flex flex-col md:flex-row italic text-sm md:text-base">
 									<p class="md:basis-2/3">{experience.company}</p>
 									<p class="md:basis-1/3 md:text-right">{experience.period}</p>
@@ -66,10 +66,10 @@ import achievementsData from '../data/achievements.json';
 
 				<!-- Education Section -->
 				<div id="section__education" class="flex flex-col lg:flex-row mb-5">
-					<h2 class="w-full lg:basis-1/3 font-bold uppercase text-xl md:text-2xl lg:text-[32px] text-white mb-3 lg:mb-0">Education</h2>
+					<h2 class="w-full lg:basis-1/3 font-bold uppercase text-xl md:text-2xl lg:text-[32px] text-white mb-3 lg:mb-0 animate-slide-in-left">Education</h2>
 					<div class="w-full lg:basis-2/3 text-white">
-						{educationData.map((edu) => (
-							<div class="flex flex-col space-y-2 pb-5 border-b-[1px] border-b-white mb-5">
+						{educationData.map((edu, index) => (
+							<div class={`flex flex-col space-y-2 pb-5 border-b-[1px] border-b-white mb-5 animate-slide-up animate-delay-${Math.min(index * 100, 500)}`}>
 								<div class="flex flex-col md:flex-row italic text-sm md:text-base">
 									<p class="md:basis-2/3">{edu.degree}</p>
 									<p class="md:basis-1/3 md:text-right">{edu.period}</p>
@@ -87,10 +87,10 @@ import achievementsData from '../data/achievements.json';
 
 				<!-- Achievement Section -->
 				<div id="section__achievement" class="flex flex-col lg:flex-row mb-5">
-					<h2 class="w-full lg:basis-1/3 font-bold uppercase text-xl md:text-2xl lg:text-[32px] text-white mb-3 lg:mb-0">Achievement</h2>
+					<h2 class="w-full lg:basis-1/3 font-bold uppercase text-xl md:text-2xl lg:text-[32px] text-white mb-3 lg:mb-0 animate-slide-in-left">Achievement</h2>
 					<div class="w-full lg:basis-2/3 text-white">
-						{achievementsData.map((achievement) => (
-							<div class="flex flex-col space-y-2 pb-5 border-b-[1px] border-b-white mb-5">
+						{achievementsData.map((achievement, index) => (
+							<div class={`flex flex-col space-y-2 pb-5 border-b-[1px] border-b-white mb-5 animate-slide-up animate-delay-${Math.min(index * 100, 500)}`}>
 								<div class="flex flex-col md:flex-row italic text-sm md:text-base">
 									<p class="md:basis-2/3">{achievement.company}</p>
 									<p class="md:basis-1/3 md:text-right">{achievement.month}</p>
@@ -129,7 +129,7 @@ import achievementsData from '../data/achievements.json';
 				<line x1="6" y1="6" x2="18" y2="18"></line>
 			</svg>
 		</button>
-		<img id="modal-image" src="" alt="Preview" class="max-w-full max-h-full object-contain">
+		<img id="modal-image" src="" alt="Preview" class="max-w-full max-h-full object-contain animate-scale-in">
 	</div>
 </Layout>
 

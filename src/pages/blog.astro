@@ -1,0 +1,280 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// Get all blog posts
+const allBlogs = await getCollection('blog');
+
+// Get unique categories
+const categories = ['All', ...new Set(allBlogs.map(blog => blog.data.category))];
+
+// Get query parameters
+const selectedCategory = Astro.url.searchParams.get('category') || 'All';
+const searchQuery = Astro.url.searchParams.get('search') || '';
+const currentPage = parseInt(Astro.url.searchParams.get('page') || '1');
+const postsPerPage = 6;
+
+// Filter blogs
+let filteredBlogs = allBlogs;
+
+if (selectedCategory !== 'All') {
+	filteredBlogs = filteredBlogs.filter(blog => blog.data.category === selectedCategory);
+}
+
+if (searchQuery) {
+	filteredBlogs = filteredBlogs.filter(blog => 
+		blog.data.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+		blog.data.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+		blog.data.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+	);
+}
+
+// Sort by date (newest first)
+filteredBlogs.sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime());
+
+// Pagination
+const totalPages = Math.ceil(filteredBlogs.length / postsPerPage);
+const startIndex = (currentPage - 1) * postsPerPage;
+const endIndex = startIndex + postsPerPage;
+const paginatedBlogs = filteredBlogs.slice(startIndex, endIndex);
+---
+
+<Layout title="Blog | Muhammad Haulul Azkiyaa" menu="blog">
+	<section>
+		<div class="px-4 md:px-10 lg:px-20 py-6 md:py-10">
+			<!-- Header -->
+			<p class="italic text-sm md:text-base animate-slide-up">Read my thoughts</p>
+			<h2 class="font-bold uppercase text-xl md:text-2xl lg:text-[32px] mb-6 animate-slide-up animate-delay-100">Blog Posts</h2>
+			
+			<!-- Search and Filter -->
+			<div class="mb-8 space-y-4 animate-slide-up animate-delay-200">
+				<!-- Search Bar -->
+				<div class="relative">
+					<input 
+						type="text" 
+						id="search-input"
+						placeholder="Search articles..." 
+						value={searchQuery}
+						class="w-full border-2 border-[#141313] px-4 py-3 pr-12 focus:outline-none focus:ring-2 focus:ring-[#141313]"
+					/>
+					<button id="search-button" class="absolute right-3 top-1/2 -translate-y-1/2">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<circle cx="11" cy="11" r="8"></circle>
+							<path d="m21 21-4.35-4.35"></path>
+						</svg>
+					</button>
+				</div>
+
+				<!-- Category Filter -->
+				<div class="flex flex-wrap gap-2">
+					{categories.map((category) => (
+						<button 
+							class="category-btn px-4 py-2 border-2 border-[#141313] hover:bg-[#141313] hover:text-white transition-colors duration-300"
+							class:list={[selectedCategory === category && 'bg-[#141313] text-white']}
+							data-category={category}
+						>
+							{category}
+						</button>
+					))}
+				</div>
+
+				{searchQuery && (
+					<p class="text-sm italic">
+						Showing results for "<strong>{searchQuery}</strong>" ({filteredBlogs.length} {filteredBlogs.length === 1 ? 'result' : 'results'})
+					</p>
+				)}
+			</div>
+
+			<!-- Blog Grid -->
+			{paginatedBlogs.length > 0 ? (
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+					{paginatedBlogs.map((blog, index) => (
+						<article class={`border-2 border-[#141313] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col animate-scale-in animate-delay-${Math.min(index % 6, 5) * 100}`}>
+							<!-- Thumbnail with 3:2 aspect ratio -->
+							<a href={`/blog/${blog.slug}`} class="block">
+								<div class="relative overflow-hidden" style="aspect-ratio: 3/2;">
+									<img 
+										src={blog.data.thumbnail} 
+										alt={blog.data.title}
+										class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+									/>
+								</div>
+							</a>
+
+							<!-- Content -->
+							<div class="p-5 flex flex-col flex-grow">
+								<!-- Category Badge -->
+								<div class="mb-3">
+									<span class="bg-gradient px-3 py-1 text-white text-xs font-bold rounded">
+										{blog.data.category}
+									</span>
+								</div>
+
+								<!-- Title -->
+								<a href={`/blog/${blog.slug}`}>
+									<h3 class="font-bold uppercase text-base md:text-lg mb-2 hover:text-gray-600 transition-colors">
+										{blog.data.title}
+									</h3>
+								</a>
+
+								<!-- Meta Info -->
+								<div class="flex items-center gap-2 text-xs text-gray-600 mb-3">
+									<time datetime={blog.data.publishedDate.toISOString()}>
+										{blog.data.publishedDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+									</time>
+									<span>•</span>
+									<span>{blog.data.readTime}</span>
+								</div>
+
+								<!-- Excerpt -->
+								<p class="text-sm md:text-base mb-4 flex-grow line-clamp-3">
+									{blog.data.excerpt}
+								</p>
+
+								<!-- Tags -->
+								<div class="flex flex-wrap gap-2 mb-4">
+									{blog.data.tags.slice(0, 3).map((tag) => (
+										<span class="bg-[#f3f3f3] px-2 py-1 text-xs rounded">
+											#{tag}
+										</span>
+									))}
+									{blog.data.tags.length > 3 && (
+										<span class="bg-[#f3f3f3] px-2 py-1 text-xs rounded font-bold">
+											+{blog.data.tags.length - 3}
+										</span>
+									)}
+								</div>
+
+								<!-- Read More -->
+								<a 
+									href={`/blog/${blog.slug}`}
+									class="inline-flex items-center space-x-2 text-sm font-bold hover:underline mt-auto"
+								>
+									<span>Read More</span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+										<path d="M5 12h14m-7-7 7 7-7 7"/>
+									</svg>
+								</a>
+							</div>
+						</article>
+					))}
+				</div>
+			) : (
+				<div class="text-center py-20 animate-fade-in">
+					<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mx-auto mb-4 text-gray-400">
+						<circle cx="11" cy="11" r="8"></circle>
+						<path d="m21 21-4.35-4.35"></path>
+					</svg>
+					<p class="text-xl font-bold mb-2">No posts found</p>
+					<p class="text-gray-600">Try adjusting your search or filter criteria</p>
+				</div>
+			)}
+
+			<!-- Pagination -->
+			{totalPages > 1 && (
+				<div class="flex justify-center items-center gap-2 animate-slide-up animate-delay-300">
+					<button 
+						id="prev-page"
+						disabled={currentPage === 1}
+						class="px-4 py-2 border-2 border-[#141313] hover:bg-[#141313] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+					>
+						Previous
+					</button>
+					
+					<div class="flex gap-2">
+						{Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+							<button 
+								class="page-btn w-10 h-10 border-2 border-[#141313] hover:bg-[#141313] hover:text-white transition-colors"
+								class:list={[currentPage === page && 'bg-[#141313] text-white']}
+								data-page={page}
+							>
+								{page}
+							</button>
+						))}
+					</div>
+
+					<button 
+						id="next-page"
+						disabled={currentPage === totalPages}
+						class="px-4 py-2 border-2 border-[#141313] hover:bg-[#141313] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+					>
+						Next
+					</button>
+				</div>
+			)}
+		</div>
+	</section>
+</Layout>
+
+<script>
+	// Search functionality
+	const searchInput = document.getElementById('search-input') as HTMLInputElement;
+	const searchButton = document.getElementById('search-button');
+
+	function performSearch() {
+		const searchValue = searchInput?.value || '';
+		const url = new URL(window.location.href);
+		if (searchValue) {
+			url.searchParams.set('search', searchValue);
+		} else {
+			url.searchParams.delete('search');
+		}
+		url.searchParams.set('page', '1');
+		window.location.href = url.toString();
+	}
+
+	searchButton?.addEventListener('click', performSearch);
+	searchInput?.addEventListener('keypress', (e) => {
+		if (e.key === 'Enter') {
+			performSearch();
+		}
+	});
+
+	// Category filter
+	const categoryBtns = document.querySelectorAll('.category-btn');
+	categoryBtns.forEach(btn => {
+		btn.addEventListener('click', () => {
+			const category = btn.getAttribute('data-category');
+			const url = new URL(window.location.href);
+			if (category && category !== 'All') {
+				url.searchParams.set('category', category);
+			} else {
+				url.searchParams.delete('category');
+			}
+			url.searchParams.set('page', '1');
+			window.location.href = url.toString();
+		});
+	});
+
+	// Pagination
+	const pageBtns = document.querySelectorAll('.page-btn');
+	pageBtns.forEach(btn => {
+		btn.addEventListener('click', () => {
+			const page = btn.getAttribute('data-page');
+			if (page) {
+				const url = new URL(window.location.href);
+				url.searchParams.set('page', page);
+				window.location.href = url.toString();
+			}
+		});
+	});
+
+	const prevBtn = document.getElementById('prev-page');
+	const nextBtn = document.getElementById('next-page');
+
+	prevBtn?.addEventListener('click', () => {
+		const url = new URL(window.location.href);
+		const currentPage = parseInt(url.searchParams.get('page') || '1');
+		if (currentPage > 1) {
+			url.searchParams.set('page', (currentPage - 1).toString());
+			window.location.href = url.toString();
+		}
+	});
+
+	nextBtn?.addEventListener('click', () => {
+		const url = new URL(window.location.href);
+		const currentPage = parseInt(url.searchParams.get('page') || '1');
+		url.searchParams.set('page', (currentPage + 1).toString());
+		window.location.href = url.toString();
+	});
+</script>
